@@ -1,6 +1,9 @@
-
-Calculaor App
+Programming Assignments
 #
-This is a Simple Calculetor App or Webpage.
-A simple project created with HTML, CSS,
-JS. 
+These are the simple or basic assignments for begginers.
+These are simple projects created with HTML, CSS, JS.
+
+Before going to start these you must know about what is 
+1. HTML
+2. CSS
+3. JS
