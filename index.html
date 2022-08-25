@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Calculator</title>
+</head>
+
+<body>
+
+    <div class="main">
+        <h1>Calculator</h1>
+
+        <label for="n1">Number 1 :</label>
+        <input type="number" id="var1" /><br><br>
+
+        <label for="n2">Number 2 :</label>
+        <input type="number" id="var2" /><br><br>
+
+        <label for="oper">Select Operator :</label>
+        <select id="oper">
+            <option value="Operator">Operators</option>
+            <option value="+">Add</option>
+            <option value="-">Subtract</option>
+            <option value="/">Divide</option>
+            <option value="*">Multiply</option>
+            <option value="%">Remainder</option>
+            <option value="pow">Power</option>
+        </select>
+        <br><br>
+
+        <button onclick="calc();">Result</button>
+        <input type="number" id="result" style="margin-left: 18px;" />
+    </div>
+
+
+</body>
+
+<!-- Css  -->
+<style>
+    .main {
+        padding: 55px;
+        border-radius: 1em;
+        height: 240px;
+        width: 280px;
+        margin: 100px auto;
+        background-color: #000000;
+    }
+
+    h1 {
+        font-size: 40px;
+        text-align: center;
+        color: white;
+    }
+
+    label {
+        color: white;
+    }
+</style>
+
+<!-- JavaScript -->
+<script>
+    function calc() {
+        var n1 = parseFloat(document.getElementById('var1').value);
+        var n2 = parseFloat(document.getElementById('var2').value);
+
+        var oper = document.getElementById('oper').value;
+
+        if (oper == '+') {
+            document.getElementById('result').value = n1 + n2;
+        }
+        if (oper == '-') {
+            document.getElementById('result').value = n1 - n2;
+        }
+        if (oper == '/') {
+            document.getElementById('result').value = n1 / n2;
+        }
+        if (oper == '*') {
+            document.getElementById('result').value = n1 * n2;
+        }
+        if (oper == '%') {
+            document.getElementById('result').value = n1 % n2;
+        }
+        if (oper == 'pow') {
+            document.getElementById('result').value = Math.pow(n1, n2);
+        }
+
+    }
+
+
+
+</script>
+
+</html>
