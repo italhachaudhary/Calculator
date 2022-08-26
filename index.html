@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="index.css" />
-    <title>Calculator</title>
-    <link rel="icon" href="images/calculator.svg" />
-  </head>
 
-  <body>
-    <div class="main">
-      <h1>Calculator</h1>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculator</title>
+  <link rel="icon" href="images/calculator.svg" />
+</head>
 
+<body>
+  <div class="main">
+    <h1>Calculator</h1>
+    <div class="wrapper">
       <label for="n1">Number 1 :</label>
       <input type="number" id="var1" /><br /><br />
-
+  
       <label for="n2">Number 2 :</label>
       <input type="number" id="var2" /><br /><br />
-
+  
       <label for="oper">Select Operator :</label>
       <select id="oper">
         <option value="Operator">Operators</option>
@@ -28,62 +28,94 @@
         <option value="pow">Power</option>
       </select>
       <br /><br />
-
-      <button onclick="calc();">Result</button>
-      <input type="number" id="result" style="margin-left: 18px" />
+  
+      <button onclick="calc();">Result</button><br><br>
+      <input type="number" id="result" />
+  
+      <div>
+        <p>
+          Created By
+          <a href="www.facebook.com/italhachaudhary">Talha Chaudhary</a>
+        </p>
+      </div>
     </div>
-  </body>
 
-  <!-- Css  -->
-  <style>
-.main {
-    padding: 85px;
-    border-radius: 1em;
-    height: 353px;
-    width: 255px;
-    margin: 0 auto;
+  </div>
+</body>
+
+<!-- Css  -->
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  .main {
     background-color: #000000;
+    margin: 100px auto;
+    height: 280px;
+    width: 220px;
+    padding: 30px 25px;
+  }
+  .wrapper{
+    margin-top: 10px;
+  }
+  
+  h1 {
+    text-align: center;
+    color: white;
+  }
+
+  label {
+    color: white;
+  }
+
+  button {
+    border-radius: 10px;
+    padding: 3px 84px;
+    background-color: blue;
+    cursor: pointer;
+    color: white;
+    border: none;
+  }
+
+  input {
+    width: 200px;
+  }
+
+  p {
+    margin-top: 15px;
+    color: white;
+    text-align: center;
+  }
+</style>
+
+<!-- JavaScript -->
+<script>
+  function calc() {
+    var n1 = parseFloat(document.getElementById("var1").value);
+    var n2 = parseFloat(document.getElementById("var2").value);
+
+    var oper = document.getElementById("oper").value;
+
+    if (oper == "+") {
+      document.getElementById("result").value = n1 + n2;
     }
-
-    h1 {
-      font-size: 40px;
-      text-align: center;
-      color: white;
+    if (oper == "-") {
+      document.getElementById("result").value = n1 - n2;
     }
-
-    label {
-      color: white;
+    if (oper == "/") {
+      document.getElementById("result").value = n1 / n2;
     }
-
-    
-  </style>
-
-  <!-- JavaScript -->
-  <script>
-    function calc() {
-      var n1 = parseFloat(document.getElementById("var1").value);
-      var n2 = parseFloat(document.getElementById("var2").value);
-
-      var oper = document.getElementById("oper").value;
-
-      if (oper == "+") {
-        document.getElementById("result").value = n1 + n2;
-      }
-      if (oper == "-") {
-        document.getElementById("result").value = n1 - n2;
-      }
-      if (oper == "/") {
-        document.getElementById("result").value = n1 / n2;
-      }
-      if (oper == "*") {
-        document.getElementById("result").value = n1 * n2;
-      }
-      if (oper == "%") {
-        document.getElementById("result").value = n1 % n2;
-      }
-      if (oper == "pow") {
-        document.getElementById("result").value = Math.pow(n1, n2);
-      }
+    if (oper == "*") {
+      document.getElementById("result").value = n1 * n2;
     }
-  </script>
+    if (oper == "%") {
+      document.getElementById("result").value = n1 % n2;
+    }
+    if (oper == "pow") {
+      document.getElementById("result").value = Math.pow(n1, n2);
+    }
+  }
+</script>
+
 </html>
